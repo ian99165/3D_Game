@@ -14,7 +14,7 @@ public class HP : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // 檢查碰到的物件名稱是否為 "shit"
-        if (other.gameObject.name == "shit")
+        if (other.gameObject.name == "shit(Clone)")
         {
             // 減少生命
             HpKill();

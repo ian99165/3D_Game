@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Atk : MonoBehaviour
 {
-    public float minX = -500f;
-    public float maxX = 500f;
-    public float minZ = -500f;
-    public float maxZ = 500f;
+    public float minX = -30f;
+    public float maxX = 30f;
+    public float minZ = -30f;
+    public float maxZ = 30f;
 
     // 設定隨機移動的速度
     public float moveSpeed = 3f;
@@ -15,10 +15,22 @@ public class Atk : MonoBehaviour
     // 目前的目標位置
     private Vector3 targetPosition;
 
+    // 要生成的預製物件
+    public GameObject shitPrefab;
+
+    // 生成的隨機時間間隔
+    public float minTime = 1f;
+    public float maxTime = 5f;
+
+    private float nextSpawnTime;
+
     void Start()
     {
         // 在開始時隨機選擇一個目標位置
         SetRandomTargetPosition();
+
+        // 初始化下一次生成的時間
+        SetNextSpawnTime();
     }
 
     void Update()
@@ -42,6 +54,13 @@ public class Atk : MonoBehaviour
         {
             SetRandomTargetPosition();
         }
+
+        // 每過一段隨機時間生成一顆shit
+        if (Time.time >= nextSpawnTime)
+        {
+            SpawnShit();
+            SetNextSpawnTime(); // 設置下一次生成的時間
+        }
     }
 
     // 設置隨機的目標位置
@@ -53,5 +72,28 @@ public class Atk : MonoBehaviour
 
         // 設定新的目標位置
         targetPosition = new Vector3(randomX, transform.position.y, randomZ); // 假設鳥的 Y 軸位置保持不變
+    }
+
+    // 設置下一次生成 shit 的時間
+    void SetNextSpawnTime()
+    {
+        nextSpawnTime = Time.time + Random.Range(minTime, maxTime); // 隨機時間間隔
+    }
+
+    // 生成 shit 預製物件
+    void SpawnShit()
+    {
+        if (shitPrefab != null)
+        {
+            // 隨機生成 shit 的位置（可以調整生成的位置範圍）
+            Vector3 spawnPosition = new Vector3(
+                transform.position.x + Random.Range(-5f, 5f), // X 軸偏移
+                transform.position.y,                         // 保持相同的 Y 軸
+                transform.position.z + Random.Range(-5f, 5f)  // Z 軸偏移
+            );
+
+            // 實例化 shit 預製物件
+            Instantiate(shitPrefab, spawnPosition, Quaternion.identity);
+        }
     }
 }
