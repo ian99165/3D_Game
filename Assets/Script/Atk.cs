@@ -86,11 +86,7 @@ public class Atk : MonoBehaviour
         if (shitPrefab != null)
         {
             // 隨機生成 shit 的位置（可以調整生成的位置範圍）
-            Vector3 spawnPosition = new Vector3(
-                transform.position.x + Random.Range(-5f, 5f), // X 軸偏移
-                transform.position.y,                         // 保持相同的 Y 軸
-                transform.position.z + Random.Range(-5f, 5f)  // Z 軸偏移
-            );
+            Vector3 spawnPosition = transform.position - new Vector3(0, 1f, 0);
 
             // 實例化 shit 預製物件
             Instantiate(shitPrefab, spawnPosition, Quaternion.identity);
