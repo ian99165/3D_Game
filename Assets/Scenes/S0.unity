@@ -182,7 +182,8 @@ MonoBehaviour:
   m_text: "\u904A\u6232\u958B\u59CB"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5e567d4b621432d4c8ab0e4b8e5c6e1d, type: 2}
-  m_sharedMaterial: {fileID: 1005916127111272300, guid: 5e567d4b621432d4c8ab0e4b8e5c6e1d, type: 2}
+  m_sharedMaterial: {fileID: 1005916127111272300, guid: 5e567d4b621432d4c8ab0e4b8e5c6e1d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -542,7 +543,8 @@ MonoBehaviour:
   m_text: "\u904A\u6232\u64CD\u4F5C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5e567d4b621432d4c8ab0e4b8e5c6e1d, type: 2}
-  m_sharedMaterial: {fileID: 1005916127111272300, guid: 5e567d4b621432d4c8ab0e4b8e5c6e1d, type: 2}
+  m_sharedMaterial: {fileID: 1005916127111272300, guid: 5e567d4b621432d4c8ab0e4b8e5c6e1d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -676,7 +678,8 @@ MonoBehaviour:
   m_text: "\u8B77\u76FE\u51B7\u537B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5e567d4b621432d4c8ab0e4b8e5c6e1d, type: 2}
-  m_sharedMaterial: {fileID: 1005916127111272300, guid: 5e567d4b621432d4c8ab0e4b8e5c6e1d, type: 2}
+  m_sharedMaterial: {fileID: 1005916127111272300, guid: 5e567d4b621432d4c8ab0e4b8e5c6e1d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1055,7 +1058,8 @@ MonoBehaviour:
   m_text: "\u9000\u51FA\u904A\u6232"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5e567d4b621432d4c8ab0e4b8e5c6e1d, type: 2}
-  m_sharedMaterial: {fileID: 1005916127111272300, guid: 5e567d4b621432d4c8ab0e4b8e5c6e1d, type: 2}
+  m_sharedMaterial: {fileID: 1005916127111272300, guid: 5e567d4b621432d4c8ab0e4b8e5c6e1d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1283,7 +1287,8 @@ MonoBehaviour:
   m_text: "\u73A9\u5BB6\u8840\u91CF"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5e567d4b621432d4c8ab0e4b8e5c6e1d, type: 2}
-  m_sharedMaterial: {fileID: 1005916127111272300, guid: 5e567d4b621432d4c8ab0e4b8e5c6e1d, type: 2}
+  m_sharedMaterial: {fileID: 1005916127111272300, guid: 5e567d4b621432d4c8ab0e4b8e5c6e1d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1369,6 +1374,7 @@ GameObject:
   - component: {fileID: 886072155}
   - component: {fileID: 886072154}
   - component: {fileID: 886072153}
+  - component: {fileID: 886072156}
   m_Layer: 5
   m_Name: X_Button
   m_TagString: Untagged
@@ -1438,7 +1444,11 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 886072154}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls: [{m_Target: {fileID: 886072156}, m_TargetAssemblyTypeName: 'xx, Assembly-CSharp',
+          m_MethodName: EnableObject, m_Mode: 1, m_Arguments: {m_ObjectArgument: {
+              fileID: 0}, m_ObjectArgumentAssemblyTypeName: 'UnityEngine.Object, UnityEngine',
+            m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: '', m_BoolArgument: 0},
+          m_CallState: 2}]
 --- !u!114 &886072154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1477,6 +1487,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 886072151}
   m_CullTransparentMesh: 1
+--- !u!114 &886072156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886072151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed64e8cf179c78e4096ba4cecdc85c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToEnable: {fileID: 1019514442}
 --- !u!1 &938755275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1564,6 +1587,7 @@ GameObject:
   - component: {fileID: 961608513}
   - component: {fileID: 961608512}
   - component: {fileID: 961608511}
+  - component: {fileID: 961608514}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -1634,7 +1658,11 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 961608512}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls: [{m_Target: {fileID: 961608514}, m_TargetAssemblyTypeName: 'gmout,
+            Assembly-CSharp', m_MethodName: ExitGame, m_Mode: 1, m_Arguments: {m_ObjectArgument: {
+              fileID: 0}, m_ObjectArgumentAssemblyTypeName: 'UnityEngine.Object, UnityEngine',
+            m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: '', m_BoolArgument: 0},
+          m_CallState: 2}]
 --- !u!114 &961608512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1673,6 +1701,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961608509}
   m_CullTransparentMesh: 1
+--- !u!114 &961608514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961608509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab4e4bb3348e0064c9ab65bc4419d9b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1979,7 +2019,8 @@ MonoBehaviour:
   m_text: "\u904A\u6232\u9078\u55AE"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5e567d4b621432d4c8ab0e4b8e5c6e1d, type: 2}
-  m_sharedMaterial: {fileID: 1005916127111272300, guid: 5e567d4b621432d4c8ab0e4b8e5c6e1d, type: 2}
+  m_sharedMaterial: {fileID: 1005916127111272300, guid: 5e567d4b621432d4c8ab0e4b8e5c6e1d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2133,6 +2174,7 @@ GameObject:
   - component: {fileID: 1295697475}
   - component: {fileID: 1295697474}
   - component: {fileID: 1295697473}
+  - component: {fileID: 1295697476}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -2203,7 +2245,11 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1295697474}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls: [{m_Target: {fileID: 1295697476}, m_TargetAssemblyTypeName: 'gmst,
+            Assembly-CSharp', m_MethodName: LoadS2Scene, m_Mode: 1, m_Arguments: {
+            m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: 'UnityEngine.Object,
+              UnityEngine', m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: '',
+            m_BoolArgument: 0}, m_CallState: 2}]
 --- !u!114 &1295697474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2242,6 +2288,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1295697471}
   m_CullTransparentMesh: 1
+--- !u!114 &1295697476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295697471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71f3631d06969424ba2c26ef3695dcff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1310973629
 GameObject:
   m_ObjectHideFlags: 0
@@ -2302,7 +2360,8 @@ MonoBehaviour:
   m_text: "\u89D2\u8272\u79FB\u52D5"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5e567d4b621432d4c8ab0e4b8e5c6e1d, type: 2}
-  m_sharedMaterial: {fileID: 1005916127111272300, guid: 5e567d4b621432d4c8ab0e4b8e5c6e1d, type: 2}
+  m_sharedMaterial: {fileID: 1005916127111272300, guid: 5e567d4b621432d4c8ab0e4b8e5c6e1d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2539,6 +2598,7 @@ GameObject:
   - component: {fileID: 1504222540}
   - component: {fileID: 1504222539}
   - component: {fileID: 1504222538}
+  - component: {fileID: 1504222541}
   m_Layer: 5
   m_Name: ManualButton
   m_TagString: Untagged
@@ -2609,7 +2669,11 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1504222539}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls: [{m_Target: {fileID: 1504222541}, m_TargetAssemblyTypeName: 'commentary,
+            Assembly-CSharp', m_MethodName: EnableObject, m_Mode: 1, m_Arguments: {
+            m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: 'UnityEngine.Object,
+              UnityEngine', m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: '',
+            m_BoolArgument: 0}, m_CallState: 2}]
 --- !u!114 &1504222539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2648,6 +2712,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1504222536}
   m_CullTransparentMesh: 1
+--- !u!114 &1504222541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504222536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cbaa0093795dbc489e286d14fb2223a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToEnable: {fileID: 1019514442}
 --- !u!1 &1671089633
 GameObject:
   m_ObjectHideFlags: 0
@@ -2953,7 +3030,8 @@ MonoBehaviour:
   m_text: "\u5012\u6578\u8A08\u6642"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5e567d4b621432d4c8ab0e4b8e5c6e1d, type: 2}
-  m_sharedMaterial: {fileID: 1005916127111272300, guid: 5e567d4b621432d4c8ab0e4b8e5c6e1d, type: 2}
+  m_sharedMaterial: {fileID: 1005916127111272300, guid: 5e567d4b621432d4c8ab0e4b8e5c6e1d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
