@@ -1,14 +1,19 @@
 using UnityEngine;
+using System.Collections;  // 添加这个命名空间以使用协程
 
 public class PickUp : MonoBehaviour
 {
     // 指定的GameObject和隱藏物件
     public GameObject targetObject;
     public GameObject hiddenObject; // 隱藏的物件
+    public GameObject CavanObject;
 
     private CD cdScript;
     private int itemCount = 0; // 記錄撿到的物件數量
     private int maxItems = 3; // 撿到的最大數量
+
+    public AudioClip pickupSound;  // 撿到物品時播放的音效
+    private AudioSource audioSource;  // 用於播放音效的 AudioSource
 
     private void Start()
     {
@@ -27,6 +32,13 @@ public class PickUp : MonoBehaviour
         {
             hiddenObject.SetActive(false);
         }
+
+        // 初始化 AudioSource
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -35,6 +47,12 @@ public class PickUp : MonoBehaviour
         {
             // 刪除物件
             Destroy(other.gameObject);
+
+            // 播放撿到物品的音效
+            if (pickupSound != null && audioSource != null)
+            {
+                audioSource.PlayOneShot(pickupSound);
+            }
 
             // 增加計數
             itemCount++;
@@ -53,8 +71,32 @@ public class PickUp : MonoBehaviour
             if (itemCount >= maxItems && hiddenObject != null)
             {
                 hiddenObject.SetActive(true);
+                CavanObject.SetActive(true);
                 Debug.Log("隱藏物件已啟用!");
+
+                // 启动协程，10秒后再次隐藏 hiddenObject，1.2秒后隐藏 CavanObject
+                StartCoroutine(HideObjectsAfterDelay(10f, 1.2f));
             }
         }
+    }
+
+    // 协程：延迟指定时间后再次隐藏物体
+    private IEnumerator HideObjectsAfterDelay(float delayForHiddenObject, float delayForCavanObject)
+    {
+        // 等待指定的时间后隐藏 CavanObject
+        yield return new WaitForSeconds(delayForCavanObject);
+        if (CavanObject != null)
+        {
+            CavanObject.SetActive(false);
+        }
+        Debug.Log("CavanObject已隱藏!");
+
+        // 等待指定的时间后隐藏 hiddenObject
+        yield return new WaitForSeconds(delayForHiddenObject - delayForCavanObject);  // 剩余的时间
+        if (hiddenObject != null)
+        {
+            hiddenObject.SetActive(false);
+        }
+        Debug.Log("隱藏物件已隱藏!");
     }
 }
